@@ -26,46 +26,55 @@
           <h2>MOON MINER</h2>
         </div>
       </div>
-      <div class="row">
-        <div class="col text-center">
-          <p>TOTAL CHEESE: <span id="current-cheese">0</span></p>
-        </div>
-      </div>
     </div>
   </header>
   <main>
     <div class="container-fluid">
       <div class="row justify-content-center">
-        <div class="col-3">
-          <div class="card p-3">
-            <h5>Purchase Upgrades:</h5>
-            <button class="bg-dark text-light" onclick="">
-              <p>Shovel: <span id="current-shovel">0</span>
-              </p>
-            </button>
-            <button class="bg-dark text-light" onclick="">
-              <p>Dynamite: <span id="current-dynamite">0</span></p>
-            </button>
-          </div>
-        </div>
-        <div class="col-lg-5 text-center">
-          <img
-            src="https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-            class="moon btn rotate" onclick="mine()" alt="moon">
-        </div>
-        <div class="col-3">
-          <div class="card p-3">
-            <h5>Automatic Upgrades:</h5>
-            <button class="bg-dark text-light" onclick="">
-              <p>Rover: <span id="current-rover">0</span></p>
-            </button>
+        <div class="col-3 card px-3">
+          <p class="text-center">INVENTORY:</p>
+          <p>Cheese: <span id="current-cheese">0</span></p>
 
-            <button class="bg-dark text-light" onclick="">
-              <p>Alien: <span id="current-alien">0</span></p>
-            </button>
-          </div>
+          <p>Shovel: <span id="current-shovel">0</span></p>
+          <p>Dynamite: <span id="current-dynamite">0</span></p>
+
+          <p>Rover: <span id="current-rover">0</span></p>
+          <p>Alien: <span id="current-alien">0</span></p>
         </div>
       </div>
+    </div>
+
+
+    <div class="row justify-content-center">
+      <div class="col-3">
+        <div class="card p-3">
+          <h5>Click Upgrades:</h5>
+          <button class="bg-dark text-light" onclick="buyShovel()">
+            <p>Shovel</p>
+          </button>
+          <button class="bg-dark text-light" onclick="buyDynamite()">
+            <p>Dynamite</p>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-5 text-center">
+        <img
+          src="https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+          class="moon btn rotate" onclick="mine()" alt="moon">
+      </div>
+      <div class="col-3">
+        <div class="card p-3">
+          <h5>Automatic Upgrades:</h5>
+          <button class="bg-dark text-light" onclick="buyRover()">
+            <p>Rover: <span id="current-rover">0</span></p>
+          </button>
+
+          <button class="bg-dark text-light" onclick="buyAlien()">
+            <p>Alien: <span id="current-alien">0</span></p>
+          </button>
+        </div>
+      </div>
+    </div>
     </div>
   </main>
   <footer>

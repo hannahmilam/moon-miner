@@ -4,7 +4,28 @@
     background-repeat: no-repeat;
 
 }
+
+.card {
+  box-shadow: #ddd69593;
+  background-color: #4d4b4b63;
+  color: white;
+}
+
 .moon{
     height: 25rem;
     border-radius: 100%;
+  
+}
+
+.rotate {
+  animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

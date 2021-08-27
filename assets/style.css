@@ -1,0 +1,10 @@
+.bg-img{
+    background-image: url("https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=694&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.moon{
+    height: 25rem;
+    border-radius: 100%;
+}

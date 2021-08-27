@@ -32,31 +32,25 @@ function mine(){
    console.log(cheese)
    update()
 }
-
 function buyShovel(){
   let shovel = clickUpgrades.shovel.quantity ++
   console.log(shovel)
   update()
-
 }
 function buyDynamite(){
   let dynamite = clickUpgrades.dynamite.quantity ++
   console.log(dynamite)
   update()
-
 }
-
 function buyRover(){
   let rover = autoUpgrades.rover.quantity ++
   console.log(rover)
   update()
-
 }
 function buyAlien(){
   let alien = autoUpgrades.alien.quantity ++
   console.log(alien)
   update()
-
 }
 
 function update(){
@@ -67,3 +61,8 @@ function update(){
   document.getElementById("current-alien").innerHTML = autoUpgrades.alien.quantity
 
 }
+function startInterval() {
+  collectionInterval = setInterval(collectAutoUpgrades, 3000);
+}
+
+startInterval()

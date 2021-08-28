@@ -4,25 +4,25 @@ let clickUpgrades = {
 sword: {
   price: 5,
   quantity: 0,
-  multiplier: 1
+  multiplier: 5
 },
 portalCutter: {
   price: 10,
   quantity: 0,
-  multiplier: 5
+  multiplier: 10
 }
 };
 
 let autoUpgrades = {
   plasmaGun: {
-    price: 10,
-    quantity: 0,
-    multiplier: 10
-  },
-  explosive: {
     price: 25,
     quantity: 0,
-    multiplier: 20
+    multiplier: 1
+  },
+  explosive: {
+    price: 50,
+    quantity: 0,
+    multiplier: 2
   }
   };
 
@@ -30,6 +30,12 @@ let autoUpgrades = {
 function mine(){
   spaceRock++
    update()
+   for(let key in clickUpgrades){
+    spaceRock +=  clickUpgrades[key].multiplier * clickUpgrades[key].quantity
+    console.log(spaceRock)
+    document.getElementById('currentSpaceRock').innerText = Math.round(spaceRock).toString()
+    }
+
 }
 // NOTE this section is buyUpgrades section. Need to make this re-usable after requirements are completed.
 function buySword(){
@@ -40,6 +46,12 @@ function buySword(){
   clickUpgrades.sword.price += Math.floor(price * 0.30);
   }else {
   console.log("not enough space rock!")
+  Swal.fire({
+    toast: true,
+    text: 'NOT ENOUGH SPACE ROCK!!!! HINT: the aliens are hiding it on their spaceship',
+    timer: 2000,
+    timerProgressBar: true,
+  })
   }
   document.getElementById("currentSword").innerText = clickUpgrades.sword.quantity.toString();
   document.getElementById('swordPrice').innerText = clickUpgrades.sword.price.toString();
@@ -54,9 +66,15 @@ function buyPortalCutter(){
   clickUpgrades.portalCutter.price += Math.floor(price * 0.30);
   }else if(spaceRock < price) {
   console.log("not enough space rock!")
+  Swal.fire({
+    toast: true,
+    text: 'NOT ENOUGH SPACE ROCK!!!! HINT: the aliens are hiding it on their spaceship',
+    timer: 2000,
+    timerProgressBar: true,
+  })
   }
   document.getElementById("currentPortalCutter").innerText = clickUpgrades.portalCutter.quantity.toString();
-  document.getElementById('portalCutterPrice').innerText = clickUpgrades.dynamite.price.toString();
+  document.getElementById('portalCutterPrice').innerText = clickUpgrades.portalCutter.price.toString();
   update();
   }
 
@@ -68,9 +86,15 @@ function buyPortalCutter(){
     autoUpgrades.plasmaGun.price += Math.floor(price * 0.30);
     }else {
     console.log("not enough space rock!")
+    Swal.fire({
+      toast: true,
+      text: 'NOT ENOUGH SPACE ROCK!!!! HINT: the aliens are hiding it on their spaceship',
+      timer: 2000,
+      timerProgressBar: true,
+    })
     }
     document.getElementById("currentPlasmaGun").innerText = autoUpgrades.plasmaGun.quantity.toString();
-    document.getElementById('plasmaGunPrice').innerText = autoUpgrades.rover.price.toString();
+    document.getElementById('plasmaGunPrice').innerText = autoUpgrades.plasmaGun.price.toString();
     update();
     }
 
@@ -82,6 +106,12 @@ function buyPortalCutter(){
     autoUpgrades.explosive.price += Math.floor(price * 0.30);
     }else {
     console.log("not enough space rock!")
+    Swal.fire({
+      toast: true,
+      text: 'NOT ENOUGH SPACE ROCK!!!! HINT: the aliens are hiding it on their spaceship',
+      timer: 2000,
+      timerProgressBar: true,
+    })
     }
     document.getElementById("currentExplosive").innerText = autoUpgrades.explosive.quantity.toString();
     document.getElementById('explosivePrice').innerText = autoUpgrades.explosive.price.toString();

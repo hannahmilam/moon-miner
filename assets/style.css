@@ -17,12 +17,23 @@ font-family: 'Press Start 2P', cursive;
 box-shadow: #ddd69593;
 background-color: #4d4b4b63;
 color: white;
+border-color: rgba(202, 61, 183, 0.404);
 }
 
 .moon{
   height: 25rem;
   border-radius: 100%;
 
+}
+
+.button{
+  background-color:#ca3db767;
+  color: white;
+  box-shadow: #ffff006c;
+}
+
+.button:hover{
+  background-color:rgba(51, 34, 46, 0.788);
 }
 
 .rotate {

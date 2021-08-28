@@ -90,4 +90,3 @@ function buyDynamite(){
 function update(){
   document.getElementById("currentCheese").innerHTML = cheese.toString();
 }
-

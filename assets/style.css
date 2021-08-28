@@ -5,10 +5,6 @@
 
 }
 
-.cursor{
-  cursor: url("https://cur.cursors-4u.net/food/foo-2/foo169.cur"), auto;
-}
-
 .custom-text {
 font-family: 'Press Start 2P', cursive;
 }
@@ -20,7 +16,7 @@ color: white;
 border-color: rgba(202, 61, 183, 0.404);
 }
 
-.moon{
+.spaceShip{
   height: 25rem;
   border-radius: 100%;
 
@@ -37,7 +33,7 @@ border-color: rgba(202, 61, 183, 0.404);
 }
 
 .rotate {
-animation: rotation 10s infinite linear;
+animation: rotation 3s infinite linear;
 }
 
 @keyframes rotation {

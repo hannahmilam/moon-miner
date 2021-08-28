@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Moon Miner</title>
+  <title>Alien Hunter</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,13 +19,13 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body class="bg-img cursor">
+<body class="bg-img">
   <header>
     <div class="container-fluid text-light">
       <div class="row">
         <div class="col text-center custom-text py-3">
           <!-- TODO add some cool icons -->
-          <h2><i class="fab fa-reddit-alien"></i> MOON MINER <i class="fab fa-reddit-alien"></i></h2>
+          <h2><i class="fab fa-reddit-alien"></i> ALIEN HUNTER <i class="fab fa-reddit-alien"></i></h2>
         </div>
       </div>
     </div>
@@ -37,55 +37,57 @@
           <div class="card p-2">
             <!-- TODO need to make these update when they are bought -->
             <p class="text-center custom-text">INVENTORY:</p>
-            <p>Shovel: <span id="currentShovel">0</span></p>
-            <p>Dynamite: <span id="currentDynamite">0</span></p>
+            <p>Sword: <span id="currentSword">0</span></p>
+            <p>Portal Cutter: <span id="currentPortalCutter">0</span></p>
 
-            <p>Rover: <span id="currentRover">0</span></p>
-            <p>Alien: <span id="currentAlien">0</span></p>
+            <p>Plasma Gun: <span id="currentPlasmaGun">0</span></p>
+            <p>Explosive: <span id="currentExplosive">0</span></p>
           </div>
         </div>
 
-        <div class="col-lg-6 text-center">
-          <p class="custom-text text-light">Cheese: <span id="currentCheese">0</span></p>
+        <div class="col-lg-6 text-center order-md-second order sm-third">
+          <p class="custom-text text-light">TOTAL SPACE ROCKS: <span id="currentSpaceRock">0</span></p>
           <img
-            src="https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-            class="moon btn rotate" onclick="mine()" alt="moon">
+            src="https://bloximages.chicago2.vip.townnews.com/postregister.com/content/tncms/assets/v3/editorial/5/05/5058d9af-e14c-51fe-8ae6-237ee3738bca/5ffe13eac21f4.image.jpg?resize=1200%2C1200"
+            class="spaceShip btn rotate" onclick="mine()" alt="space ship">
         </div>
 
         <!-- TODO make STATS update -->
-        <div class="col-lg-3 col-sm-6 p-3">
+        <div class="col-lg-3 col-sm-6 p-3 order-sm-second order-md-third">
           <div class="card p-2">
             <p class="custom-text">STATS:</p>
-            <p>CPS (cheese per second): 0</p>
-            <p>TCM (total cheese multiplier): 0</p>
+            <p>SPS (space-rock per second): <span id="sps">0</span></p>
+            <p>TSM (total space-rock multiplier): <span id="tsm">0</span></p>
           </div>
         </div>
       </div>
 
       <div class="row mb-5">
-        <!-- TODO at somepoint.. make these a button template in java so there isn't as much repeated code -->
+        <!-- TODO at some point.. make these a button template in java so there isn't as much repeated code -->
         <div class="col-8 offset-2 card">
           <div class="row">
             <div class="col">
               <div class="p-3">
                 <p class="custom-text">Click Upgrades:</p>
-                <p><button class="button" onclick="buyShovel()">
-                    +1 Shovel
-                  </button>= -<span id="shovelPrice">5 </span> cheese</p>
-                <p><button class="button" onclick="buyDynamite()">
-                    +1 Dynamite
-                  </button>= -<span id="dynamitePrice">10 </span> cheese</p>
+                <p><button class="button" onclick="buySword()">
+                    +1 SWORD
+                  </button>price: <span id="shovelPrice">5 </span> space rocks</p>
+                <p><button class="button" onclick="buyPortalCutter()">
+                    +5 PORTAL CUTTER
+                  </button>price: <span id="dynamitePrice">10 </span> space rocks</p>
               </div>
             </div>
             <div class="col">
               <div class="p-3">
                 <p class="custom-text">Auto Upgrades:</p>
-                <p> <button class="button" onclick="buyRover()">
-                    +10 Rover
-                  </button>= -<span id="roverPrice">10 </span> cheese</p>
-                <p><button class="button" onclick="buyAlien()">
-                    +20 Alien
-                  </button>= -<span id="alienPrice">25 </span> cheese</p>
+                <p>
+                <p><em>adds space rock to your bank every 3 seconds</em></p><button class="button"
+                  onclick="buyPlasmaGun()">
+                  +10 PLASMA GUN
+                </button>price: <span id="roverPrice">10</span> space rocks</p>
+                <p><button class="button" onclick="buyExplosive()">
+                    +20 EXPLOSIVE
+                  </button>price: <span id="explosivePrice">25 </span> space rocks</p>
               </div>
             </div>
           </div>

@@ -52,7 +52,7 @@ function buyDynamite(){
   clickUpgrades.dynamite.quantity++;
   clickUpgrades.dynamite.price += Math.floor(price * 0.10);
   }else if(cheese < price) {
-  return alert("try to mine for more cheese!")
+  console.log("not enough cheese!")
   }
   document.getElementById("currentDynamite").innerText = clickUpgrades.dynamite.quantity.toString();
   document.getElementById('dynamitePrice').innerText = clickUpgrades.dynamite.price.toString();

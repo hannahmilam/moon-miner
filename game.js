@@ -28,41 +28,66 @@ let autoUpgrades = {
 
   // FUNCTIONS :)
 function mine(){
-  let currentCheese = cheese++
-   console.log(cheese)
+   cheese++
    update()
 }
 function buyShovel(){
-  let shovel = clickUpgrades.shovel.quantity ++
-  console.log(shovel)
-  update()
-}
+  let price = clickUpgrades.shovel.price;
+  if(cheese >= price) {
+  cheese -= price;
+  clickUpgrades.shovel.quantity++;
+  clickUpgrades.shovel.price += Math.floor(price * 0.10);
+  }else {
+  console.log("not enough cheese!")
+  }
+  document.getElementById("currentShovel").innerText = clickUpgrades.shovel.quantity.toString();
+  document.getElementById('shovelPrice').innerText = clickUpgrades.shovel.price.toString();
+  update();
+  }
+
 function buyDynamite(){
-  let dynamite = clickUpgrades.dynamite.quantity ++
-  console.log(dynamite)
-  update()
-}
-function buyRover(){
-  let rover = autoUpgrades.rover.quantity ++
-  console.log(rover)
-  update()
-}
-function buyAlien(){
-  let alien = autoUpgrades.alien.quantity ++
-  console.log(alien)
-  update()
-}
+  let price = clickUpgrades.dynamite.price;
+  if(cheese >= price) {
+  cheese -= price;
+  clickUpgrades.dynamite.quantity++;
+  clickUpgrades.dynamite.price += Math.floor(price * 0.10);
+  }else if(cheese < price) {
+  return alert("try to mine for more cheese!")
+  }
+  document.getElementById("currentDynamite").innerText = clickUpgrades.dynamite.quantity.toString();
+  document.getElementById('dynamitePrice').innerText = clickUpgrades.dynamite.price.toString();
+  update();
+  }
+
+  function buyRover(){
+    let price = autoUpgrades.rover.price;
+    if(cheese >= price) {
+    cheese -= price;
+    autoUpgrades.rover.quantity++;
+    autoUpgrades.rover.price += Math.floor(price * 0.10);
+    }else {
+    console.log("not enough cheese!")
+    }
+    document.getElementById("currentRover").innerText = autoUpgrades.rover.quantity.toString();
+    document.getElementById('roverPrice').innerText = autoUpgrades.rover.price.toString();
+    update();
+    }
+
+  function buyAlien(){
+   let price = autoUpgrades.alien.price;
+    if(cheese >= price) {
+    cheese -= price;
+    autoUpgrades.alien.quantity++;
+    autoUpgrades.alien.price += Math.floor(price * 0.10);
+    }else {
+    console.log("not enough cheese!")
+    }
+    document.getElementById("currentAlien").innerText = autoUpgrades.alien.quantity.toString();
+    document.getElementById('alienPrice').innerText = autoUpgrades.alien.price.toString();
+    update();
+     }
 
 function update(){
-  document.getElementById("current-cheese").innerHTML = cheese
-  document.getElementById("current-shovel").innerHTML = clickUpgrades.shovel.quantity
-  document.getElementById("current-dynamite").innerHTML = clickUpgrades.dynamite.quantity
-  document.getElementById("current-rover").innerHTML = autoUpgrades.rover.quantity
-  document.getElementById("current-alien").innerHTML = autoUpgrades.alien.quantity
-
-}
-function startInterval() {
-  collectionInterval = setInterval(collectAutoUpgrades, 3000);
+  document.getElementById("currentCheese").innerHTML = cheese.toString();
 }
 
-startInterval()

@@ -5,6 +5,25 @@
 
 }
 
+.spaceShip{
+  height: 25rem;
+  border-radius: 100%;
+
+}
+
+.rotate {
+  animation: rotation 3s infinite linear;
+  }
+  
+  @keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+  }
+
 .custom-text {
 font-family: 'Press Start 2P', cursive;
 }
@@ -16,12 +35,6 @@ color: white;
 border-color: rgba(202, 61, 183, 0.404);
 }
 
-.spaceShip{
-  height: 25rem;
-  border-radius: 100%;
-
-}
-
 .button{
   background-color:#ca3db767;
   color: white;
@@ -30,17 +43,4 @@ border-color: rgba(202, 61, 183, 0.404);
 
 .button:hover{
   background-color:rgba(51, 34, 46, 0.788);
-}
-
-.rotate {
-animation: rotation 3s infinite linear;
-}
-
-@keyframes rotation {
-from {
-  transform: rotate(0deg);
-}
-to {
-  transform: rotate(360deg);
-}
 }

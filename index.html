@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
@@ -30,14 +31,16 @@
       </div>
     </div>
   </header>
+
   <main>
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-3 p-3">
           <div class="card p-3 mb-3">
             <p class="custom-text">STATS:</p>
-            <p>TOTAL SPACE ROCKS: <span id="currentSpaceRock">0</span></p>
-            <p>Space Rock Added Per Second: <span id="sps">0</span></p>
+            <p><i class="far fa-gem"></i> TOTAL SPACE GEMS: <span id="currentSpaceGem">0</span> <i
+                class="far fa-gem"></i></p>
+            <p>Space Gems Added Per Second: <span id="sps">0</span></p>
           </div>
           <div class="card p-3">
             <!-- TODO need to make these update when they are bought -->
@@ -51,7 +54,7 @@
 
         </div>
 
-        <div class="col-lg-6 text-center order-md-second order sm-third">
+        <div class="col-lg-6 text-center">
           <img
             src="https://bloximages.chicago2.vip.townnews.com/postregister.com/content/tncms/assets/v3/editorial/5/05/5058d9af-e14c-51fe-8ae6-237ee3738bca/5ffe13eac21f4.image.jpg?resize=1200%2C1200"
             class="spaceShip btn rotate" onclick="mine()" alt="space ship">
@@ -60,33 +63,33 @@
         <div class="col-lg-3">
           <div class="card p-3 mb-3">
             <p class="custom-text">Click Upgrades:</p>
-            <p><em>increases space rock total per click</em></p>
+            <p><em>increases space gems total per click</em></p>
             <p><button class="button" onclick="buySword()">
                 +5 SWORD
-              </button><em>price: <span id="swordPrice">5 space rock </em></span></p>
+              </button><em>price: <span id="swordPrice">5 space gems </em></span></p>
             <p><button class="button" onclick="buyPortalCutter()">
                 +10 PORTAL CUTTER
-              </button><em>price: <span id="portalCutterPrice">10 space rock</em></span></p>
+              </button><em>price: <span id="portalCutterPrice">10 space gems</em></span></p>
           </div>
           <div class="card p-3">
             <p class="custom-text">Auto Upgrades:</p>
             <p>
-            <p><em>increases space rock every 3 seconds</em></p>
+            <p><em>increases space gems every 3 seconds</em></p>
 
             <p><button class="button" onclick="buyPlasmaGun()">
                 +1 PLASMA GUN
-              </button><em>price: <span id="plasmaGunPrice">25 space rock</em></span></p>
+              </button><em>price: <span id="plasmaGunPrice">25 space gems</em></span></p>
             <p><button class="button" onclick="buyExplosive()">
                 +2 EXPLOSIVE
-              </button><em>price: <span id="explosivePrice">50 space rock </em></span></p>
+              </button><em>price: <span id="explosivePrice">50 space gems </em></span></p>
           </div>
         </div>
       </div>
     </div>
-
-
     </div>
   </main>
+
+
   <script src=" game.js"></script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -96,6 +99,8 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </body>
 
 </html>
